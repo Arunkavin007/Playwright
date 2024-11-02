@@ -14,6 +14,15 @@ test('test', async ({ page }) => {
   await page.getByPlaceholder('Password').fill('Autogreen@12');
   await page.getByRole('button', { name: 'Sign in' }).click();
   await page.getByRole('button', { name: 'Yes' }).click();
+  
   test.setTimeout(45000);
   await expect(page.getByRole('heading', { name: 'Quick access' })).toBeVisible({ timeout: 10000 });
+  await page.screenshot(
+    {
+      path : 'C:/Users/PR735DG/OneDrive - EY/Desktop/Playwright1/playwright/test-results/Image1.png',
+     // clip:{x:0,y:0, width:500, height:500},
+ 
+      fullPage : true
+    }
+  )
 });
